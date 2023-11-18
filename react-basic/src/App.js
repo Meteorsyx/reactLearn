@@ -1,5 +1,6 @@
 // 项目的根组件
 import { useState } from 'react';
+import Button from '@mui/material/Button';
 import './App.css';
 
 function App() {
@@ -43,9 +44,9 @@ function App() {
   }
 
   // 组件
-  function Button(){
-    return <button>click me</button>
-  }
+  // function Button(){
+  //   return <button>click me</button>
+  // }
   // useState实现一个计数器
   // 调用useState添加了一个状态变量
   // count 状态变量
@@ -90,6 +91,7 @@ function App() {
       <Button></Button>
 
       <button onClick={addCount}>{count}</button>
+      <Button variant="contained">Hello world</Button>
     </div>
   );
 }

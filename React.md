@@ -2,6 +2,8 @@
 
 创建命令：npx create-react-app <项目名字>
 
+Material UI :npm install @mui/material @emotion/react @emotion/styled
+
 ### 一.React的特点
 
 1.采用组件化模式、声明式编码，提高开发效率及组件复用率。
