@@ -4,6 +4,10 @@
 
 Material UI :npm install @mui/material @emotion/react @emotion/styled
 
+react是把数据变为html视图的开源javascript库
+
+facebook开发
+
 ### 一.React的特点
 
 1.采用组件化模式、声明式编码，提高开发效率及组件复用率。
