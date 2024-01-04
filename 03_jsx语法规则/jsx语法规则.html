@@ -23,7 +23,7 @@
     // 1.创建虚拟DOM
     const VDOM = (
       <h1 className="title" id={myId}>
-        <span style={{color:'white',fontSize:'29px'}}>{myData}</span>
+        <span style={{color:'white',fontSize:'29px'}}>{myData.toLowerCase()}{myId}</span>
       </h1>
     )
     // 2.渲染虚拟DOM到页面
