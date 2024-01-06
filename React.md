@@ -110,7 +110,68 @@ js的语法扩展，需要通过解析工具解析才能在浏览器里运行
 
 函数式组件：
 
+  <script type="text/babel"> /* 此处一定要写babel */
+    // 1.创建函数式组件
+    function Demo(){
+        return <h2>我是函数组件（适用于 简单组件 的定义）</h2>
+    }
+    // 2.渲染组件到页面
+    ReactDOM.render(<Demo/>,document.getElementById('test'))
+  </script>
+
+执行了ReactDOM.render(<Demo/>........之后，发生了什么)
+
+   1.React解析组件标签，找到了Demo组件。
+
+   2.发现组件是使用函数定义的，随后调用该函数，将返回的虚拟DOM转为真实DOM，随后呈现在页面中
+
+
+
 类式组件：
+
+类的基本知识：
+
+总结：
+
+​    1.类中的构造器不是必须写的，要对示例进行一些初始化的操作，如添加指定属性时才写
+
+​    2.如果A类继承了B类，且A类中写了构造器，那么A类构造器中的super是必须要调用的。
+
+​    3.类中定义的方法，都是放在了类的原型对象上，供实例使用。
+
+```js
+    // 创建一个Person类
+    class Person{
+      // 构造器方法
+      constructor(name,age){
+        // 构造器中的this是类的示例对象
+        this.name = name
+        this.age = age
+      }
+      // 一般方法
+      speak(){
+        // 通过Person示例调用speak时，speak中的this就是Person示例
+        console.log(`我叫${this.name},我年龄的${this.age}`);
+      }
+    }
+
+    // 继承Person类
+    class Student extends Person{
+      constructor(name,age,grade){
+        super(name,age)
+        this.grade = grade
+      }
+    }
+
+    class Dog{
+
+    }
+
+    const p1 = new Person()
+    const p2 = new Person()
+```
+
+
 
 # 文档学习
 

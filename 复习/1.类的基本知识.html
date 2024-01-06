@@ -24,7 +24,7 @@
       // 一般方法
       speak(){
         // 通过Person示例调用speak时，speak中的this就是Person示例
-        console.log(`我叫${this.name},我年龄的${this.age}`);
+        console.log(`我叫${this.name},我的年龄${this.age}`);
       }
     }
 
@@ -34,14 +34,26 @@
         super(name,age)
         this.grade = grade
       }
+      // 重写方法
+      speak(){
+        // 通过Person示例调用speak时，speak中的this就是Person示例
+        console.log(`我叫${this.name},我的年龄${this.age},我的年级${this.grade}`);
+      }
     }
 
     class Dog{
 
     }
 
-    const p1 = new Person()
-    const p2 = new Person()
+    const p1 = new Person('tom',18)
+    const p2 = new Person('jerry',19)
+    const s1 = new Student('jack',12,'初一')
+    console.log(p1);
+    console.log(p2);
+    console.log(s1);
+    p1.speak()
+    p2.speak()
+    s1.speak()
   </script>
 </body>
 </html>
