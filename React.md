@@ -108,7 +108,7 @@ js的语法扩展，需要通过解析工具解析才能在浏览器里运行
 
 ##### 2.1.2. 效果
 
-函数式组件：
+**函数式组件：**
 
   <script type="text/babel"> /* 此处一定要写babel */
     // 1.创建函数式组件
@@ -127,9 +127,44 @@ js的语法扩展，需要通过解析工具解析才能在浏览器里运行
 
 
 
-类式组件：
 
-类的基本知识：
+
+**类式组件**：
+
+```js
+// 1.创建类式组件
+
+  class MyComponent extends React.Component{
+
+​    render(){
+
+​    // render中的this是谁？--MyComponent的实例对象，MyComponent组件实例对象
+
+​    console.log("MyComponent ",this );
+
+​    return <h2>类定义的组件(适用于 复杂组件 的定义)</h2>
+
+​    }
+
+  }
+
+  // 2.渲染组件到页面
+
+  ReactDOM.render(<MyComponent/>,document.getElementById('test'))
+  /* 
+    执行了ReactDOM.render(<MyComponent/>........之后，发生了什么)
+      1.React解析组件标签，找到了MyComponent组件。
+      2.发现组件是使用类定义的，随后new出来该类的实例，并通过该实例调用到原型上的render方法
+      3.将rnder返回的虚拟DOM转为真实DOM，随后呈现在页面中
+     */
+  
+```
+
+
+
+
+
+**类的基本知识：**
 
 总结：
 
