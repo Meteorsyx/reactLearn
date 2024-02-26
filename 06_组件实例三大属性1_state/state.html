@@ -20,19 +20,22 @@
             this.state = {
                 isHot:false
             }
+            // 给changeWeather函数绑定了this为weather示例对象
+            this.changeWeather = this.changeWeather.bind(this)
         }
-         render(){
-            console.log(this);
-            const {isHot} = this.state
-          return <h2 onClick={demo}>今天天气很{isHot ? '炎热':'凉爽'}</h2>
-         }
+        render(){
+          console.log(this);
+          const {isHot} = this.state
+          return <h2 onClick={this.changeWeather}>今天天气很{isHot ? '炎热':'凉爽'}</h2>
+        }
+        changeWeather(){
+          console.log(this.state);
+        }
       }
       // 2.渲染组件到页面
       ReactDOM.render(<MyComponent/>,document.getElementById('test'))
 
-      function demo(){
-        console.log('标题被点击了');
-      }
+      
     </script>
 </body>
 </html>
